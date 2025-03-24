@@ -1,0 +1,18 @@
+# file name should be 00-installer-config.yaml
+# save in the /etc/netplan directory
+# run netplan apply after saving the file
+# indents matter and can through off configuration
+
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    ens160:
+      dhcp4: false
+      addresses:
+        - 172.16.150.40/24
+      nameservers:
+        addresses: [172.16.150.2]
+      routes:
+        - to: default
+          via: 172.16.150.2
+  version: 2
